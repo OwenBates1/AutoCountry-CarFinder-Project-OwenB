@@ -8,7 +8,7 @@ def user_menu():
 #Display menu with options
 def full_menu():
     user_menu()
-    userChoice = input("Please Enter the following number below from the following menu:\n"
+    userChoice = input("Please Enter the following number below from the following menu:\n"5
       "1. PRINT all Authorized Vehicles\n"
       "2. SEARCH for Authorized Vehicle\n"
       "3. ADD Authrorized Vehicle\n"
@@ -20,12 +20,11 @@ def full_menu():
   
 
 while True:
-  filename = "Vehicles.txt"
-  
   
   userChoice = full_menu()
 
   if userChoice == "1":
+    print("The AutoCountry sales manager has authorized the purchase and selling of the following vehicles: ")
     db = open("Vehicle.txt", "r")
     print(db.read())
   elif userChoice == "2":
