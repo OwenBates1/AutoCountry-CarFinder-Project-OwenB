@@ -14,8 +14,9 @@ def full_menu():
     userChoice = input("Please Enter the following number below from the following menu:\n"
       "1. PRINT all Authorized Vehicles\n"
       "2. SEARCH for Authorized Vehicle\n"
-      "3. ADD Authroized Vehicle\n"
-      "4. Exit\n"
+      "3. ADD Authrorized Vehicle\n"
+      "4. DELETE Authrorized Vehicle\n"
+      "5. Exit\n"
       "Choice: ")
     
     return userChoice
@@ -32,13 +33,24 @@ while True:
     if x in AllowedVehiclesList:
         print(x + " is an authorized vehicle")
     else:
-        print(x + " is not an authorized vehicle. Please check the spelling and try again.")
+        print(x + " is not an authorized vehicle. Please check the spelling"
+              " and try again.")
   elif userChoice == "3" :
     newVehicle = input("Please Enter the full Vehicle name you would like to add: ")
     AllowedVehiclesList.append(newVehicle) 
     print("You have added " + newVehicle + " as an authorized vehicle")
-  
   elif userChoice == "4":
+    removeVehicle = input("Please Enter the full Vehicle name" 
+                          " you would like to REMOVE: ")
+    confirmed = input("Are you sure you want to remove " + removeVehicle + 
+                      " from the Authorized Vehicle List? ")
+    if confirmed == "yes":
+      print("You have REMOVED " + removeVehicle + " as an authorized vehicle")
+      AllowedVehiclesList.remove(removeVehicle)
+       
+    if confirmed == "no" "No":
+          continue
+  elif userChoice == "5":
     print("Thank you for using the AutoCountry Vehicle Finder. Goodbye!")
     break
   else:
